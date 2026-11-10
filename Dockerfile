@@ -1,4 +1,4 @@
-# Stage 1: Build the application with Java 26 JDK
+# Stage 1: Build the application using Java 26 JDK
 FROM eclipse-temurin:26-jdk-alpine AS build
 WORKDIR /app
 
@@ -17,7 +17,7 @@ RUN ./mvnw dependency:go-offline -B
 COPY src src
 RUN ./mvnw package -DskipTests
 
-# Stage 2: Run the application with Java 26 JRE
+# Stage 2: Run the application using Java 26 JRE
 FROM eclipse-temurin:26-jre-alpine
 WORKDIR /app
 
